@@ -53,6 +53,7 @@ const BookEvent = ({ eventId, slug }: { eventId: string; slug: string }) => {
               id="email"
               placeholder="Enter your email address"
               required
+              data-version="required-test"
             />
           </div>
 
