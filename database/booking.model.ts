@@ -41,22 +41,23 @@ const BookingSchema = new Schema<IBooking>(
 BookingSchema.pre("save", async function () {
   const booking = this as IBooking;
 
-  // Only validate eventId if it's new or modified
-  if (booking.isModified("eventId") || booking.isNew) {
-    try {
-      const eventExists = await Event.findById(booking.eventId).select("_id");
-
-      if (!eventExists) {
-        throw new Error(`Event with ID ${booking.eventId} does not exist`);
-      }
-    } catch (error) {
-      if (error instanceof Error && error.message.startsWith("Event with ID")) {
-        throw error;
-      }
-    }
+  if (!booking.isNew && !booking.isModified("eventId")) {
+    return;
   }
 
-  throw new Error("Invalid event ID format or database error");
+  if (!Types.ObjectId.isValid(booking.eventId)) {
+    throw new Error("Invalid event ID format");
+  }
+
+  const eventExists = await Event.exists({
+    _id: booking.eventId,
+  });
+
+  if (!eventExists) {
+    throw new Error(
+      `Event with ID ${booking.eventId.toString()} does not exist`,
+    );
+  }
 });
 
 // Create index on eventId for faster queries
