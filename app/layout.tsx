@@ -20,6 +20,22 @@ const martianMono = Martian_Mono({
 export const metadata: Metadata = {
   title: "Dev Event",
   description: "The Hub for Every Dev Event",
+  openGraph: {
+    title: "Your Events",
+    description: "Discover and book upcoming events.",
+    url: "https://nextjs-jsme2.vercel.app/",
+    siteName: "Your Events",
+    images: [
+      {
+        url: "https://nextjs-jsme2.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Your Events",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -51,9 +51,8 @@ const BookEvent = ({ eventId, slug }: { eventId: string; slug: string }) => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               id="email"
-              placeholder="Enter your email"
+              placeholder="Enter your email address"
               required
-              data-version="required-test"
             />
           </div>
 
