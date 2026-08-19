@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Dev Event",
     images: [
       {
-        url: "https://nextjs-jsme2.vercel.app/og-image.png",
+        url: "https://nextjs-jsme2.vercel.app/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Dev Event",
