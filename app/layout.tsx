@@ -19,18 +19,18 @@ const martianMono = Martian_Mono({
 
 export const metadata: Metadata = {
   title: "Dev Event",
-  description: "The Hub for Every Dev Event",
+  description: "The Hub for Every Dev Event You Mustn't Miss",
   openGraph: {
-    title: "Your Events",
-    description: "Discover and book upcoming events.",
+    title: "Dev Event",
+    description: "Discover and book upcoming dev events.",
     url: "https://nextjs-jsme2.vercel.app/",
-    siteName: "Your Events",
+    siteName: "Dev Event",
     images: [
       {
         url: "https://nextjs-jsme2.vercel.app/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Your Events",
+        alt: "Dev Event",
       },
     ],
     locale: "en_US",
